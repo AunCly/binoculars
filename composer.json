@@ -1,0 +1,53 @@
+{
+    "name": "auncly/sqlite-visualizer",
+    "description": "Sqlite Database Visualizer",
+    "keywords": [
+        "auncly"
+    ],
+    "homepage": "https://github.com/auncly/sqlite-visualizer",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aurélien Clugery",
+            "email": "aurelien.clugery@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^9.0",
+        "laravel/framework": "^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Auncly\\Binoculars\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Auncly\\Binoculars\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BinocularsServiceProvider"
+            ],
+            "aliases": {
+                "Binoculars": "Auncly\\Binoculars\\BinocularsFacade"
+            }
+        }
+    }
+}
