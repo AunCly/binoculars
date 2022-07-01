@@ -2,6 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import Routes from './routes';
 import VueRouter from 'vue-router';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 require('bootstrap');
 
@@ -12,6 +13,13 @@ if (token) {
 }
 
 Vue.use(VueRouter);
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+window.Binoculars.basePath = '/' + window.Binoculars.path;
 
 let routerBasePath = window.Binoculars.basePath + '/';
 

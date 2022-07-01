@@ -14,34 +14,35 @@ class BinocularsServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'sqlite-visualizer');
-         $this->loadViewsFrom(__DIR__.'/../resources/views', 'sqlite-visualizer');
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'binoculars');
+         $this->loadViewsFrom(__DIR__.'/../resources/views', 'binoculars');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
          $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('sqlite-visualizer.php'),
-            ], 'config');
+                __DIR__.'/../config/config.php' => config_path('binoculars.php'),
+            ], 'binoculars-config');
 
             // Publishing the views.
-//            $this->publishes([
-//                __DIR__.'/../resources/views' => resource_path('views/vendor/sqlite-visualizer'),
-//            ], 'views');
+            $this->publishes([
+                __DIR__.'/../resources/views' => resource_path('views/vendor/binoculars'),
+            ], 'binoculars-views');
 
             // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/sqlite-visualizer'),
-            ], 'assets');*/
+            $this->publishes([
+                __DIR__.'/../public' => public_path('vendor/binoculars'),
+            ], 'binoculars-assets');
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/sqlite-visualizer'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/binoculars'),
             ], 'lang');*/
 
             // Registering package commands.
             // $this->commands([]);
         }
+        
     }
 
     /**
@@ -50,10 +51,10 @@ class BinocularsServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'sqlite-visualizer');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'binoculars');
 
         // Register the main class to use with the facade
-        $this->app->singleton('sqlite-visualizer', function () {
+        $this->app->singleton('binoculars', function () {
             return new Binoculars;
         });
     }

@@ -1,10 +1,10 @@
 {
-    "name": "auncly/sqlite-visualizer",
+    "name": "auncly/binoculars",
     "description": "Sqlite Database Visualizer",
     "keywords": [
         "auncly"
     ],
-    "homepage": "https://github.com/auncly/sqlite-visualizer",
+    "homepage": "https://github.com/auncly/binoculars",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BinocularsServiceProvider"
+                "Auncly\\Binoculars\\BinocularsServiceProvider"
             ],
             "aliases": {
                 "Binoculars": "Auncly\\Binoculars\\BinocularsFacade"

@@ -4,5 +4,18 @@ namespace Auncly\Binoculars;
 
 class Binoculars
 {
-    // Build your next great package.
+    
+    /**
+     * Get the default JavaScript variables for Telescope.
+     *
+     * @return array
+     */
+    public static function scriptVariables()
+    {
+        return [
+            'path' => config('binoculars.path'),
+            'timezone' => config('app.timezone'),
+        ];
+    }
+    
 }
