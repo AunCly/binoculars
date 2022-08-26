@@ -42,3 +42,4 @@ mix.options({
       }),
     ],
   });
+  /*.copy('./public', '/Users/aclugery/Sites/laravel/public/vendor/binoculars');*/
